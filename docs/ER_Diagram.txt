@@ -1,0 +1,5 @@
+Customers (1) --- (1..*) Accounts
+Accounts  (1) --- (1..*) Transactions
+Customers (1) --- (1..*) Loans
+Accounts  (1) --- (1..*) Audit_Log
+Transactions can reference another Account for transfers
