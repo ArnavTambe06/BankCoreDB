@@ -45,7 +45,7 @@ CREATE TABLE transactions (
     CONSTRAINT fk_transaction_account FOREIGN KEY (account_id) REFERENCES accounts(account_id)
 );
 
--- 4. Loans Table (Optional but adds value)
+-- 4. Loans Table 
 CREATE TABLE loans (
     loan_id         NUMBER(10)      PRIMARY KEY,
     customer_id     NUMBER(10)      NOT NULL,
@@ -77,7 +77,7 @@ CREATE SEQUENCE trans_seq    START WITH 10000001 INCREMENT BY 1;
 CREATE SEQUENCE loan_seq     START WITH 9001 INCREMENT BY 1;
 CREATE SEQUENCE audit_seq    START WITH 1 INCREMENT BY 1;
 
--- Indexes for performance (important for resume)
+-- Indexes for performance
 CREATE INDEX idx_accounts_customer ON accounts(customer_id);
 CREATE INDEX idx_transactions_account ON transactions(account_id);
 CREATE INDEX idx_transactions_date ON transactions(transaction_date);
